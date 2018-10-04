@@ -12,7 +12,7 @@ RUN apt-get -y install homegear-nodes-core
 RUN apt-get -y install homegear-nodes-extra 
 RUN apt-get -y install homegear-homematicbidcos 
 RUN apt-get -y install homegear-homematicwired 
-# RUN apt-get -y install homegear-insteon 
+RUN apt-get -y install homegear-insteon 
 RUN apt-get -y install homegear-max 
 RUN apt-get -y install homegear-philipshue 
 RUN apt-get -y install homegear-sonos 
@@ -22,7 +22,7 @@ RUN apt-get -y install homegear-beckhoff
 RUN apt-get -y install homegear-knx 
 RUN apt-get -y install homegear-enocean 
 RUN apt-get -y install homegear-intertechno 
-RUN apt-get -y install homegear-influxdb 
+# RUN apt-get -y install homegear-influxdb 
 RUN apt-get -y install vim 
 RUN apt-get -y install less 
 RUN apt-get -y install htop
