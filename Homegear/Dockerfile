@@ -12,7 +12,7 @@ RUN apt-get -y install homegear-nodes-core
 RUN apt-get -y install homegear-nodes-extra 
 RUN apt-get -y install homegear-homematicbidcos 
 RUN apt-get -y install homegear-homematicwired 
-RUN apt-get -y install homegear-insteon 
+# RUN apt-get -y install homegear-insteon 
 RUN apt-get -y install homegear-max 
 RUN apt-get -y install homegear-philipshue 
 RUN apt-get -y install homegear-sonos 
