@@ -33,6 +33,10 @@ if ! [ -f /etc/homegear/dh1024.pem ]; then
 	chown homegear:homegear /etc/homegear/dh1024.pem
 	chmod 400 /etc/homegear/dh1024.pem
 fi
+chown -hR homegear:homegear /etc/homegear
+chown -hR homegear:homegear /etc/homegear/
+chown -hR homegear:homegear /var/lib/homegear
+chown -hR homegear:homegear /var/lib/homegear/
 
 service homegear start
 # service homegear-influxdb start
