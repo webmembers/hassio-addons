@@ -37,6 +37,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
+USER root
 CMD /start.sh
 
 EXPOSE 2001
