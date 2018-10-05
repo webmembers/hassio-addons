@@ -39,4 +39,4 @@ COPY start.sh /start.sh
 RUN chmod +x /start.sh
 CMD /start.sh
 
-EXPOSE 2001 2002 2003
+EXPOSE 2001
