@@ -3,7 +3,7 @@
 # Inspired by https://github.com/Homegear/Homegear-Docker/blob/master/rpi-stable/start.sh
 
 mkdir -p /config/homegear /share/homegear/lib /share/homegear/log
-chown root:root /config/homegear /share/homegear/lib /share/homegear/log
+chown homegear:homegear /config/homegear /share/homegear/lib /share/homegear/log
 rm -Rf /etc/homegear /var/lib/homegear /var/log/homegear
 ln -nfs /config/homegear     /etc/homegear
 ln -nfs /share/homegear/lib /var/lib/homegear
@@ -27,16 +27,16 @@ if ! [ -f /etc/homegear/dh1024.pem ]; then
 	openssl req -batch -new -key /etc/homegear/homegear.key -out /etc/homegear/homegear.csr
 	openssl x509 -req -in /etc/homegear/homegear.csr -signkey /etc/homegear/homegear.key -out /etc/homegear/homegear.crt
 	rm /etc/homegear/homegear.csr
-	chown root:root /etc/homegear/homegear.key
+	chown homegear:homegear /etc/homegear/homegear.key
 	chmod 400 /etc/homegear/homegear.key
 	openssl dhparam -check -text -5 -out /etc/homegear/dh1024.pem 1024
-	chown root:root /etc/homegear/dh1024.pem
+	chown homegear:homegear /etc/homegear/dh1024.pem
 	chmod 400 /etc/homegear/dh1024.pem
 fi
-chown -hR root:root /etc/homegear
-chown -hR root:root /etc/homegear/
-chown -hR root:root /var/lib/homegear
-chown -hR root:root /var/lib/homegear/
+chown -hR homegear:homegear /etc/homegear
+chown -hR homegear:homegear /etc/homegear/
+chown -hR homegear:homegear /var/lib/homegear
+chown -hR homegear:homegear /var/lib/homegear/
 
 service homegear start
 # service homegear-influxdb start
