@@ -1,11 +1,6 @@
 #/bin/bash
 
 # Inspired by https://github.com/Homegear/Homegear-Docker/blob/master/rpi-stable/start.sh
-sed -e "s/-u homegear -g homegear/-u root -g root/g" /lib/systemd/system/homegear.service
-sed -e "s/-u homegear -g homegear/-u root -g root/g" /etc/homegear/homegear-start.sh
-sudo systemctl daemon-reload
-sudo systemctl enable homegear.service
-
 
 mkdir -p /config/homegear /share/homegear/lib /share/homegear/log
 chown root:root /config/homegear /share/homegear/lib /share/homegear/log
@@ -44,6 +39,12 @@ chown -hR root:root /etc/homegear/
 chown -hR root:root /var/lib/homegear
 chown -hR root:root /var/lib/homegear/
 
-service homegear start
-# service homegear-influxdb start
+# sed -e "s/-u homegear -g homegear/-u root -g root/g" /lib/systemd/system/homegear.service
+# sed -e "s/-u homegear -g homegear/-u root -g root/g" /etc/homegear/homegear-start.sh
+# sudo systemctl daemon-reload
+# sudo systemctl enable homegear.service
+# service homegear start
+
+/etc/homegear/homegear-start.sh
+/usr/bin/homegear -u root -g root -p /var/run/homegear/homegear.pid
 tail -f /var/log/homegear/homegear.log
