@@ -46,5 +46,5 @@ chown -hR root:root /var/lib/homegear/
 # service homegear start
 
 /etc/homegear/homegear-start.sh
-/usr/bin/homegear -u root -g root -p /var/run/homegear/homegear.pid
+/usr/bin/homegear -p /var/run/homegear/homegear.pid
 tail -f /var/log/homegear/homegear.log
