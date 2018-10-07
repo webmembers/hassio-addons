@@ -1,9 +1,18 @@
 #/bin/bash
 
 # Inspired by https://github.com/Homegear/Homegear-Docker/blob/master/rpi-stable/start.sh
+sed -e "s/-u homegear -g homegear/-u root -g root/g" /lib/systemd/system/homegear.service
+sed -e "s/-u homegear -g homegear/-u root -g root/g" /etc/homegear/homegear-start.sh
+sudo systemctl daemon-reload
+sudo systemctl enable homegear.service
+
+chown -hR root:root /etc/homegear
+chown -hR root:root /etc/homegear/
+chown -hR root:root /var/lib/homegear
+chown -hR root:root /var/lib/homegear/
 
 mkdir -p /config/homegear /share/homegear/lib /share/homegear/log
-chown homegear:homegear /config/homegear /share/homegear/lib /share/homegear/log
+chown root:root /config/homegear /share/homegear/lib /share/homegear/log
 rm -Rf /etc/homegear /var/lib/homegear /var/log/homegear
 ln -nfs /config/homegear     /etc/homegear
 ln -nfs /share/homegear/lib /var/lib/homegear
