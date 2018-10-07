@@ -6,10 +6,6 @@ sed -e "s/-u homegear -g homegear/-u root -g root/g" /etc/homegear/homegear-star
 sudo systemctl daemon-reload
 sudo systemctl enable homegear.service
 
-chown -hR root:root /etc/homegear
-chown -hR root:root /etc/homegear/
-chown -hR root:root /var/lib/homegear
-chown -hR root:root /var/lib/homegear/
 
 mkdir -p /config/homegear /share/homegear/lib /share/homegear/log
 chown root:root /config/homegear /share/homegear/lib /share/homegear/log
@@ -42,6 +38,11 @@ if ! [ -f /etc/homegear/dh1024.pem ]; then
 	chown root:root /etc/homegear/dh1024.pem
 	chmod 400 /etc/homegear/dh1024.pem
 fi
+
+chown -hR root:root /etc/homegear
+chown -hR root:root /etc/homegear/
+chown -hR root:root /var/lib/homegear
+chown -hR root:root /var/lib/homegear/
 
 service homegear start
 # service homegear-influxdb start
