@@ -45,5 +45,5 @@ chown -hR root:root /var/lib/homegear/
 # sudo systemctl enable homegear.service
 # service homegear start
 
-/usr/bin/homegear -p /var/run/homegear/homegear.pid
+/usr/bin/homegear -p /var/run/homegear/homegear.pid &
 tail -f /var/log/homegear/homegear.log
