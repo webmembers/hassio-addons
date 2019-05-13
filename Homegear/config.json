@@ -1,6 +1,6 @@
 {
   "name": "Homegear",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "slug": "rpi-homegear",
   "description": "Homegear as a Hassio add-on",
   "startup": "before",
@@ -9,6 +9,9 @@
   "privileged": [
     "SYS_ADMIN",
     "SYS_RAWIO"
+  ],
+  "arch": [
+    "armhf"
   ],
   "map": ["config:rw", "share:rw"],
   "host_network": true,
