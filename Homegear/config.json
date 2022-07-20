@@ -3,6 +3,7 @@
   "version": "0.2",
   "slug": "rpi-homegear",
   "description": "Homegear as a Hassio add-on",
+  "arch": [ "armhf", "armv7" ],
   "startup": "before",
   "boot": "auto",
   "gpio": true,
